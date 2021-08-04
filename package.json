@@ -20,15 +20,21 @@
     "react-flexbox-grid": "2.1.2"
   },
   "scripts": {
-    "start": "export BROWSER=none && react-scripts start",
-    "start-electron": "export ELECTRON_START_URL=http://localhost:3000 && electron .",
-    "build": "react-scripts build",
+    "start": "set BROWSER=none && react-scripts start",
+    "start-electron": "set ELECTRON_START_URL=http://localhost:3000 && electron .",
+    "build-electron": "mkdir build\\electron && cp index.js build\\electron\\index.js",
+    "build-electron-win": "mkdir build\\electron && robocopy index.js build\\electron\\index.js /S",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "electron ."
+    "dev": "electron .",
+
+    "build": "npm run react-build && npm run electron-build",
+    "electron-build": "electron-builder",
+    "react-build": "react-scripts build"
   },
-  "productName":"Home Weather Station",
-  "main": "index.js",
+  "homepage": "./",
+  "productName": "Home Weather Station",
+  "main": "public/electron.js",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -50,7 +56,20 @@
   "devDependencies": {
     "concurrently": "^6.2.0",
     "electron": "^13.1.8",
+    "electron-builder": "^22.11.7",
     "electron-is-dev": "^2.0.0",
+    "electron-packager": "^15.3.0",
     "wait-on": "^6.0.0"
+  },
+  "build": {
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "publish": {
+      "provider": "github",
+      "repo": "weatherstation",
+      "owner": "khubbard96"
+    }
   }
 }

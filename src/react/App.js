@@ -8,20 +8,19 @@ import TodayForecastWidget from "./components/widget/TodayForecastWidget";
 import DayTodoWidget, { DayTodoType } from "./components/widget/DayTodoWidget";
 import WeekTodoWidget from "./components/widget/WeekTodoWidget";
 
+const App = () => {
 
-
-const App: React.FC = () => {
   return (
     <div className="App">
-    <HorizWidgetContainer>
-      <TitleWidget/>
-      <CurrentWeatherWidget/>
-      <TrafficWidget />
-      <TodayForecastWidget />
-      <DayTodoWidget title={DayTodoType.TODAY} />
-      <DayTodoWidget title={DayTodoType.TOMORROW} />
-      <WeekTodoWidget />
-    </HorizWidgetContainer>
+        <HorizWidgetContainer>
+            <TitleWidget/>
+            <CurrentWeatherWidget/>
+            <TrafficWidget />
+            <TodayForecastWidget />
+            <DayTodoWidget title={DayTodoType.TODAY} />
+            <DayTodoWidget title={DayTodoType.TOMORROW} />
+            <WeekTodoWidget />
+        </HorizWidgetContainer>
     </div>
   );
 }
