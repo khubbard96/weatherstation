@@ -6,6 +6,7 @@ setup_git() {
 }
 
 commit_website_files() {
+  git remote set-url origin https://${GH_TOKEN}@github.com/khubbard96/weatherstation.git > /dev/null 2>&1
   git push origin --delete deploy
   git checkout -b deploy
   git add dist
@@ -13,7 +14,6 @@ commit_website_files() {
 }
 
 upload_files() {
-  git remote set-url origin https://${GH_TOKEN}@github.com/khubbard96/weatherstation.git > /dev/null 2>&1
   git push --quiet -u origin deploy
 }
 
