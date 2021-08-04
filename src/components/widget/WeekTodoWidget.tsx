@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import Widget from "../framework/Widget";
 import WidgetPush from "../framework/WidgetPush";
-import WidgetConfig from "../framework/WidgetConfig";
 
 export enum DayTodoType {
   TODAY = "Today",
@@ -15,13 +14,13 @@ const DayTodoItem:React.FC = (props) => {
 }
 
 const WIDGET_WIDTH = 12;
-type DayTodoWidgetProps = {
+/*type DayTodoWidgetProps = {
   title:DayTodoType
-}
+}*/
 
 const WeekTodoWidget:React.FC = (props) => {
 
-  const [dayType, setDayType] = useState("");
+  //const [dayType, setDayType] = useState("");
 
   const numTodos = 5;
 

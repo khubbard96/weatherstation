@@ -2,14 +2,13 @@ import React from "react"
 import {Row, Col} from "react-flexbox-grid";
 import Widget from "../framework/Widget";
 import WidgetPush from "../framework/WidgetPush";
-import WidgetConfig from "../framework/WidgetConfig";
 import WbCloudyOutlinedIcon from '@material-ui/icons/WbCloudyOutlined';
 
-type HourBlockWeatherInput = {
+/*type HourBlockWeatherInput = {
   hrNumber:number;
   condition:string;
   temp:number
-}
+}*/
 
 const HourBlockWeatherDisplay:React.FC = (props) => {
   return(

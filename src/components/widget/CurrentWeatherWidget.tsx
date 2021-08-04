@@ -1,7 +1,6 @@
 import React from "react";
 import Widget from "../framework/Widget";
 import WidgetPush from "../framework/WidgetPush";
-import WidgetConfig from "../framework/WidgetConfig";
 import WbCloudyOutlinedIcon from '@material-ui/icons/WbCloudyOutlined';
 import { Row, Col } from "react-flexbox-grid";
 

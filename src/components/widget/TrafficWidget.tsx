@@ -1,7 +1,6 @@
 import React from "react";
 import Widget from "../framework/Widget";
 import WidgetPush from "../framework/WidgetPush";
-import WidgetConfig from "../framework/WidgetConfig";
 
 const WIDGET_WIDTH = 5;
 
