@@ -26,6 +26,7 @@
     "eject": "react-scripts eject",
     "dev": "electron ."
   },
+  "productName":"Home Weather Station",
   "main": "index.js",
   "eslintConfig": {
     "extends": [
