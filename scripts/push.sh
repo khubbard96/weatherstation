@@ -12,7 +12,7 @@ commit_website_files() {
 }
 
 upload_files() {
-  git push --quiet --set-upstream deploy
+  git push --quiet -u origin deploy
 }
 
 ls
