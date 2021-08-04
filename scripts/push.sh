@@ -7,12 +7,12 @@ setup_git() {
 
 commit_website_files() {
   git checkout -b deploy
-  git add build
+  git pull
+  git add dist
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
 }
 
 upload_files() {
-  git pull
   git remote set-url origin https://${GH_TOKEN}@github.com/khubbard96/weatherstation.git > /dev/null 2>&1
   git push --quiet -u origin deploy
 }
