@@ -6,8 +6,8 @@ setup_git() {
 }
 
 commit_website_files() {
+  git push origin --delete deploy
   git checkout -b deploy
-  git pull
   git add dist
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
 }
