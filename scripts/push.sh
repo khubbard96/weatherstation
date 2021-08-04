@@ -18,6 +18,8 @@ upload_files() {
 }
 
 ls
+sudo apt install zip
+zip -r distZip.zip dist
 setup_git
 commit_website_files
 upload_files
