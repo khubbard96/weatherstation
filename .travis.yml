@@ -5,3 +5,15 @@ jobs:
     include:
         -stage: Deploy linux
         script: npm run build
+        after_success:
+            - git config --global user.email "travis@travis-ci.org"
+            - git config --global user.name "Travis CI"
+            - git checkout -b deploy
+            - git add build/
+            - git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
+            - git remote add origin-pages https://${GH_TOKEN}@github.com/MVSE-outreach/resources.git > /dev/null 2>&1
+            - git push --quiet --set-upstream deploy
+env:
+  global:
+    secure: UjS/RIUv8oObx7aeWgzUsDiFChEYTt4m3Yf1HuTNyBATR4MdqPchWFBAPtmu2lGHUxGqHY5DBHHgiIC5gSuir2ih4CoKR4SBSDo54z53Ik0rko2MV/kusFJmjQ9ryK2TGR5Xt7eYGh4W/mQOY5yYQjZmeIMt5hz6ZUbU05aJau+5a1Wp36gaOskBjCR0QIAQYW/ElP3H3qH4me6V1BCBRCbObOAdScXl60Z7GSxO9KvUP+wH0OOdR+Yh1KEDK9ixbyZyYdP3KmMW6Ww+B3bjraAPBODNukOzmvKdFKlNfaWHwQTGXavHG5fkmajsi9O78/MyaHmEMZw5S3FjLr+zXop1Ghiu0d7GzzkgsbjZncOtatElBdHUv9z0yaU5lGGwV128FvRezkIbBGClaAuwngvGbcnFTINQIF9K2T16C6BoRNOcFTho1ImcWptCh6gyfPG9W3jvdJnz8iHzW7upNtNgcRFfMviKq3TjhQiyOAPPjMCeg0iLC5joid631hxRxxYB2/PbqCKnLLd0WE0YsZV/zMDwIf2/qbcRREERqvn+Dcfkkz2Ar2Y5asz9y5GfXekT6j5yj/O8v/UcSyxFYpDsVa8V20bJ0vnaFLEsb2mjfwTlahcpJGj13UB1aYip8Ph60U0AK2ebprQH1BqaTgpAe0lO1xsSEKytEI8PLXk=
+
