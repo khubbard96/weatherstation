@@ -12,6 +12,7 @@ commit_website_files() {
 }
 
 upload_files() {
+  git remote add origin https://${GH_TOKEN}@github.com/khubbard96/weatherstation.git > /dev/null 2>&1
   git push --quiet -u origin deploy
 }
 
