@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./styles.css";
+import React from "react";
+import HorizWidgetContainer from "./components/framework/HorizWidgetContainer";
+import TitleWidget from "./components/widget/TitleWidget";
+import CurrentWeatherWidget from "./components/widget/CurrentWeatherWidget";
+import TrafficWidget from "./components/widget/TrafficWidget";
+import TodayForecastWidget from "./components/widget/TodayForecastWidget";
+import DayTodoWidget, { DayTodoType } from "./components/widget/DayTodoWidget";
+import WeekTodoWidget from "./components/widget/WeekTodoWidget";
 
-function App() {
+
+
+const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <HorizWidgetContainer>
+      <TitleWidget/>
+      <CurrentWeatherWidget/>
+      <TrafficWidget />
+      <TodayForecastWidget />
+      <DayTodoWidget title={DayTodoType.TODAY} />
+      <DayTodoWidget title={DayTodoType.TOMORROW} />
+      <WeekTodoWidget />
+    </HorizWidgetContainer>
     </div>
   );
 }
