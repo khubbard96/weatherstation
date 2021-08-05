@@ -29,7 +29,7 @@
     "dev": "electron .",
 
     "build": "npm run react-build && npm run electron-build",
-    "electron-build": "electron-builder",
+    "electron-build": "electron-builder build --linux",
     "react-build": "react-scripts build"
   },
   "homepage": "./",
